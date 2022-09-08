@@ -7,7 +7,7 @@ const request = require('request'),
 async function main_process() {
     if (process.argv.length !== 6) {
         console.log(`                   < CREATE BY HUỲNH VĂN DƯỠNG ATTACK >
-        Usage: node io-stresser.js <URL> <TIME> <TREADS> <bypass/proxy/proxy.txt>`);
+        Usage: node ddos-http.js <URL> <TIME> <TREADS> <bypass/proxy/proxy.txt>`);
         process.exit(0);
     }else{
         const target = process.argv[2];
@@ -87,7 +87,7 @@ async function main_process() {
                 if (cluster.isMaster) {
                         for (let i = 0; i < threads; i++) {
                             cluster.fork();
-                            console.log(`IO-STRESSER TREADS: ${i+1}`);
+                            console.log(`HVD TREADS: ${i+1}`);
                         }
                     cluster.on('exit', function(){
                         cluster.fork();
